@@ -1,0 +1,47 @@
+@startuml Modelo de Dominio
+
+class Espacio_virtual{}
+class Publicacion{}
+class Usuario{}
+class Estudiante{}
+class Profesor{}
+class Personal_Admin{}
+class Actividad{}
+class Propuesta{}
+class Evento{}
+class Taller{}
+class Grupo_Estudio{}
+class Seminario{}
+class Deporte{}
+class Cultura{}
+class Investigacion{}
+class Proyecto{}
+class Experiencia{}
+
+Publicacion "1..*" -l-o Espacio_virtual
+Usuario "1..*" -u-o Espacio_virtual
+Estudiante -u-|> Usuario
+Profesor -u-|> Usuario
+Personal_Admin -u-|> Usuario
+Usuario  --> "1..*" Publicacion: Crea 
+Personal_Admin --> "1.*" Publicacion: Aprueba 
+Actividad  -r-|> Publicacion
+Propuesta --|> Publicacion
+Evento --|> Publicacion
+Estudiante --> "1..*" Actividad: Organiza
+Profesor -r-> "1..*" Propuesta: Publica
+Personal_Admin --> "1..*" Evento: Agrega
+
+Investigacion "0..*" -l-o Propuesta
+Proyecto "0..*" -u-o Propuesta
+Experiencia "0..*" -u-o Propuesta
+
+Taller "0..*" -u-o Actividad
+Grupo_Estudio "0..*" -u-o Actividad
+Seminario "0..*" -r-o Actividad
+Deporte "0..*" --o Actividad
+Cultura "0..*" --o Actividad
+
+
+
+@enduml
