@@ -22,7 +22,6 @@ Notificación_de_publicación-->c4:Eventos revisados?
 c4-->Publicaciones_revisadas :si
 Publicaciones_revisadas-->[*] :Cerrar sesión
 c4--> Visualizar_publicaciones :no
-Notificación_de_publicación-->c2
 Añadir_publicaciones-->c5: verificar publicación?
 c5-->Consultar_lista_actividades_proyectos :si
 c5-->Consultar_calendario_eventos :no
